@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#461b2a">
+  <title>Quiz | Vitimização Secundária — VIII SEMEPEX</title>
+  <meta name="description" content="Quiz acadêmico sobre vitimização secundária, Lei Mariana Ferrer e vontade constitucional. VIII SEMEPEX — Construções do Feminino: Política e Cuidado.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="page-shell">
+
+    <header class="site-header">
+      <img class="puc-logo" src="img/puc-minas.png" width="300" height="404"
+           alt="PUC Minas — Pontifícia Universidade Católica de Minas Gerais">
+
+      <p class="event-label">VIII SEMEPEX</p>
+      <h1>Construções do Feminino:<br>Política e Cuidado</h1>
+      <p class="event-subtitle">Conhecimento, reflexão e compromisso constitucional.</p>
+    </header>
+
+    <main>
+      <!-- Tema + introdução + botão de início -->
+      <section class="hero" id="intro" aria-labelledby="topic-title">
+        <div class="topic-card">
+          <p class="topic-eyebrow">Tema da turma</p>
+          <h2 id="topic-title">Vitimização Secundária</h2>
+          <p class="topic-law">Lei Mariana Ferrer</p>
+          <p class="topic-quote">“É preciso (urgente) vontade constitucional.”</p>
+        </div>
+
+        <div class="intro">
+          <h3>Vamos testar seus conhecimentos?</h3>
+          <p>
+            Responda às questões, revise conceitos importantes e reflita sobre a proteção da
+            dignidade e os direitos das mulheres. Você terá 45 segundos para cada pergunta.
+          </p>
+          <button class="btn" id="startButton" type="button">
+            Iniciar quiz <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Perguntas (também usada na revisão: data-mode="review") -->
+      <section class="quiz-section" id="quizSection" aria-label="Quiz" hidden>
+        <div class="quiz-topline">
+          <span id="questionCounter">Pergunta 1 de 10</span>
+          <span id="scoreCounter">Acertos: 0</span>
+        </div>
+
+        <div class="progress-track" id="progressTrack" role="progressbar"
+             aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <article class="quiz-card" id="quizCard">
+          <div class="question-meta">
+            <span class="question-tag" id="questionTag">Questão objetiva</span>
+            <span class="timer" id="timer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 2"></path>
+              </svg>
+              <span id="timerText" aria-label="Tempo restante">45s</span>
+            </span>
+          </div>
+
+          <div class="timer-track"><div class="timer-fill" id="timerFill"></div></div>
+
+          <h2 class="question-text" id="questionText" tabindex="-1"></h2>
+          <div class="answers" id="answers"></div>
+
+          <div class="feedback" id="feedback" role="status" hidden>
+            <p class="feedback-heading" id="feedbackHeading"></p>
+            <p class="feedback-text" id="feedbackText"></p>
+          </div>
+
+          <div class="question-actions">
+            <button class="btn" id="nextButton" type="button" hidden></button>
+          </div>
+        </article>
+      </section>
+
+      <!-- Resultado -->
+      <section class="quiz-section" id="resultSection" aria-label="Resultado final" hidden>
+        <div class="result-card">
+          <div class="result-icon" id="resultIcon" aria-hidden="true">✦</div>
+          <h2 id="resultTitle">Quiz concluído!</h2>
+          <p class="result-message" id="resultMessage"></p>
+
+          <div class="score-display">
+            <span class="score-number" id="finalScore">0/10</span>
+            <span class="score-caption">Respostas corretas</span>
+          </div>
+
+          <div class="rating-area">
+            <h3>Como foi sua experiência?</h3>
+            <div class="stars" role="group" aria-label="Avalie de uma a cinco estrelas">
+              <button class="star-button" type="button" data-rating="1" aria-label="1 estrela" aria-pressed="false">★</button>
+              <button class="star-button" type="button" data-rating="2" aria-label="2 estrelas" aria-pressed="false">★</button>
+              <button class="star-button" type="button" data-rating="3" aria-label="3 estrelas" aria-pressed="false">★</button>
+              <button class="star-button" type="button" data-rating="4" aria-label="4 estrelas" aria-pressed="false">★</button>
+              <button class="star-button" type="button" data-rating="5" aria-label="5 estrelas" aria-pressed="false">★</button>
+            </div>
+            <p class="rating-message" id="ratingMessage" aria-live="polite"></p>
+            <p class="rating-note">A seleção é apenas visual nesta versão; a avaliação não é enviada nem armazenada.</p>
+          </div>
+
+          <div class="result-actions">
+            <button class="btn" id="restartButton" type="button">Tentar novamente ↻</button>
+            <button class="btn btn-secondary" id="reviewButton" type="button">Revisar respostas</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-event">VIII SEMEPEX · PUC Minas</p>
+      <p class="copyright">
+        © 2026 · Plataforma de quiz acadêmico.<br>
+        Conteúdo e identidade institucional pertencem aos respectivos titulares.
+      </p>
+
+      <p class="credit">
+        <span>uma produção</span>
+        <img src="img/grupo-safe.png" width="520" height="263" alt="Grupo Safe — Consultoria &amp; Gestão">
+      </p>
+    </footer>
+  </div>
+
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
