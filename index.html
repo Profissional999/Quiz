@@ -102,6 +102,7 @@
 
           <div class="rating-area">
             <h3>Como foi sua experiência?</h3>
+
             <div class="stars" role="group" aria-label="Avalie de uma a cinco estrelas">
               <button class="star-button" type="button" data-rating="1" aria-label="1 estrela" aria-pressed="false">★</button>
               <button class="star-button" type="button" data-rating="2" aria-label="2 estrelas" aria-pressed="false">★</button>
@@ -109,8 +110,21 @@
               <button class="star-button" type="button" data-rating="4" aria-label="4 estrelas" aria-pressed="false">★</button>
               <button class="star-button" type="button" data-rating="5" aria-label="5 estrelas" aria-pressed="false">★</button>
             </div>
-            <p class="rating-message" id="ratingMessage" aria-live="polite"></p>
-            <p class="rating-note">A seleção é apenas visual nesta versão; a avaliação não é enviada nem armazenada.</p>
+
+            <div class="comment-field">
+              <label for="commentInput">Comentário (opcional)</label>
+              <textarea id="commentInput" rows="3" maxlength="500"
+                        placeholder="Conte o que achou ou deixe uma sugestão."></textarea>
+            </div>
+
+            <!-- Campo escondido: robôs costumam preenchê-lo, pessoas não -->
+            <input class="trap" type="text" id="websiteTrap" name="website"
+                   tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <button class="btn" id="sendRatingButton" type="button" disabled>Enviar avaliação</button>
+
+            <p class="rating-message" id="ratingMessage" role="status"></p>
+            <p class="rating-note">Anônimo: não pedimos nome, e-mail nem matrícula.</p>
           </div>
 
           <div class="result-actions">
@@ -135,6 +149,7 @@
     </footer>
   </div>
 
+  <script src="config.js"></script>
   <script src="questions.js"></script>
   <script src="quiz.js"></script>
 </body>

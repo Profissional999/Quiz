@@ -1,6 +1,6 @@
 "use strict";
 
-/* Depende de js/questions.js (constante QUESTIONS). */
+/* Depende de js/config.js (FEEDBACK_URL) e js/questions.js (QUESTIONS). */
 
 const QUESTION_TIME = 45;     // segundos por pergunta
 const URGENT_AT = 10;         // segundos restantes para o alerta vermelho
@@ -53,6 +53,9 @@ const els = {
   resultMessage: $("resultMessage"),
   finalScore: $("finalScore"),
   ratingMessage: $("ratingMessage"),
+  commentInput: $("commentInput"),
+  sendRating: $("sendRatingButton"),
+  trap: $("websiteTrap"),
   stars: document.querySelectorAll(".star-button")
 };
 
@@ -65,7 +68,10 @@ const state = {
   busy: false,     // true durante a animação de troca de pergunta
   review: false,
   endTime: 0,
-  timerId: null
+  timerId: null,
+  rating: 0,       // estrelas escolhidas (0 = nenhuma)
+  sending: false,
+  sent: false
 };
 
 /* ---------- Utilidades ---------- */
@@ -375,23 +381,85 @@ function restartQuiz() {
   delete els.quizSection.dataset.mode;
   els.card.classList.remove("leaving", "entering");
 
-  els.stars.forEach(star => {
-    star.classList.remove("selected");
-    star.setAttribute("aria-pressed", "false");
-  });
-  els.ratingMessage.textContent = "";
+  resetRatingForm();
 
   showScreen("intro");
   $("startButton").focus({ preventScroll: true });
 }
 
 function selectRating(rating) {
+  if (state.sent || state.sending) return;
+
+  state.rating = rating;
   els.stars.forEach(star => {
     const value = Number(star.dataset.rating);
     star.classList.toggle("selected", value <= rating);
     star.setAttribute("aria-pressed", String(value === rating));
   });
-  els.ratingMessage.textContent = RATING_MESSAGES[rating];
+
+  els.sendRating.disabled = false;
+  els.ratingMessage.textContent = "";
+}
+
+function setRatingFormLocked(locked) {
+  els.stars.forEach(star => { star.disabled = locked; });
+  els.commentInput.disabled = locked;
+}
+
+function resetRatingForm() {
+  Object.assign(state, { rating: 0, sending: false, sent: false });
+
+  els.stars.forEach(star => {
+    star.classList.remove("selected");
+    star.setAttribute("aria-pressed", "false");
+  });
+  setRatingFormLocked(false);
+
+  els.commentInput.value = "";
+  els.trap.value = "";
+  els.sendRating.disabled = true;
+  els.sendRating.textContent = "Enviar avaliação";
+  els.ratingMessage.textContent = "";
+}
+
+/** Envia nota e comentário (anônimos) para a planilha via Google Apps Script. */
+async function sendFeedback() {
+  if (!state.rating || state.sending || state.sent) return;
+  if (els.trap.value) return; // campo-isca preenchido: provavelmente um robô
+
+  if (!FEEDBACK_URL) {
+    els.ratingMessage.textContent = "O envio de avaliações ainda não foi configurado.";
+    return;
+  }
+
+  state.sending = true;
+  els.sendRating.disabled = true;
+  els.sendRating.textContent = "Enviando…";
+  els.ratingMessage.textContent = "";
+
+  try {
+    // "no-cors" + text/plain evita bloqueios do navegador com o Apps Script.
+    await fetch(FEEDBACK_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        rating: state.rating,
+        comment: els.commentInput.value.trim()
+      })
+    });
+
+    state.sent = true;
+    setRatingFormLocked(true);
+    els.sendRating.textContent = "Avaliação enviada ✓";
+    els.ratingMessage.textContent = RATING_MESSAGES[state.rating];
+  } catch (error) {
+    els.sendRating.disabled = false;
+    els.sendRating.textContent = "Enviar avaliação";
+    els.ratingMessage.textContent = "Não foi possível enviar agora. Confira sua conexão e tente de novo.";
+  } finally {
+    state.sending = false;
+  }
 }
 
 /* ---------- Eventos ---------- */
@@ -408,3 +476,4 @@ els.next.addEventListener("click", () => {
 els.stars.forEach(star => {
   star.addEventListener("click", () => selectRating(Number(star.dataset.rating)));
 });
+els.sendRating.addEventListener("click", sendFeedback);
