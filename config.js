@@ -7,4 +7,4 @@
   ainda não foi configurado.
 */
 
-const FEEDBACK_URL = "";
+const FEEDBACK_URL = "https://script.google.com/macros/s/AKfycbzrJTMQ7voGToPirkDAIZW1uyOl409NPBMiAADmEJjfWWD19DKFUzvqg3u_Ew8Fpxtt/exec";
