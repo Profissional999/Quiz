@@ -1,0 +1,13 @@
+GRUPO SAFE — EVOLUTION
+
+1. Extraia o ZIP.
+2. Envie index.html, style.css, script.js e a pasta assets para a RAIZ do repositório GitHub.
+3. Confirme que index.html aparece na raiz.
+4. Abra Settings > Pages.
+5. Em Build and deployment, selecione Deploy from a branch.
+6. Escolha a branch principal (main ou principal) e a pasta /(root), depois salve.
+7. Aguarde o GitHub Pages publicar o endereço.
+
+A identidade vetorial em assets/safe-mark.svg é um símbolo provisório inspirado na marca. Para usar a logomarca oficial fiel, substitua esse arquivo por uma versão oficial otimizada e mantenha o mesmo nome/caminho.
+O botão de contato abre o Instagram @profissionalsafe; o domínio institucional é profissionalsafe.com.br.
+Edite os textos diretamente em index.html e as cores no início de style.css.
