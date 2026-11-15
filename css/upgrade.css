@@ -198,3 +198,6 @@ nav .navbtn,.btn{box-shadow:0 10px 24px #2865d838;transition:transform .25s,box-
  .stories-pillars{grid-template-columns:1fr}
  .stories-end{align-items:flex-start;flex-direction:column;padding-top:55px}
 }
+
+/* Correção: o conteúdo alternativo não deve aparecer quando a imagem do mascote carrega */
+.mascot-fallback[hidden]{display:none!important}
