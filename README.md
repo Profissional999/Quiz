@@ -1,21 +1,12 @@
-# Grupo SAFE 2.0 — Premium
+# Grupo SAFE 2.0
 
-Site institucional estático em HTML, CSS e JavaScript, pronto para GitHub Pages.
+Site institucional estático para publicação no GitHub Pages.
 
-## Estrutura
-- `index.html`: início.
-- `paginas/`: história, segurança, SAFE Digital, projetos, conhecimento e contato.
-- `css/`: estilo e responsividade.
-- `js/`: navegação, animações e formulário.
-- `assets/`: logo e mascotes 3D.
+## Publicação
+Mantenha `index.html`, `explorar.html` e as pastas `css`, `js`, `paginas` e `assets` na raiz do repositório. Não envie apenas o HTML isolado.
 
-## Antes de publicar
-1. Coloque a logo oficial em `assets/logo/logo-safe.png`.
-2. Adicione `mascote-principal.png`, `mascote-seguranca.png` e `mascote-digital.png` em `assets/mascotes/`.
-3. Configure o número oficial em `js/contact.js` (DDI + DDD + número, apenas dígitos).
-4. Revise serviços, contatos e marcos históricos. As datas da timeline ainda são marcadores narrativos, não datas históricas confirmadas.
+## WhatsApp
+Número configurado nos CTAs e no formulário: **(31) 9123-3320** (`553191233320`). Para alterar no futuro, atualize o número em `js/main.js`, `js/contact.js` e nos links `wa.me` dos HTMLs.
 
-## GitHub Pages
-Envie o conteúdo desta pasta para a raiz do repositório. Em Settings > Pages, selecione Deploy from a branch, branch `main` (ou a branch principal usada) e pasta `/(root)`. Salve e aguarde a publicação.
-
-O formulário abre o WhatsApp e não armazena dados no site. O projeto não usa framework nem etapa de build.
+## Personalização
+Substitua os arquivos de orientação em `assets/logo`, `assets/mascotes`, `assets/imagens` e `assets/videos` pelos materiais oficiais, preservando os nomes de arquivo referenciados no HTML.
