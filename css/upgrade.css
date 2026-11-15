@@ -1,0 +1,47 @@
+/* GRUPO SAFE — upgrade visual (carregado depois de style.css e responsive.css) */
+:root{--muted:#475569;--grad:linear-gradient(135deg,#12366f,#2865d8 60%,#27b8d0)}
+:focus-visible{outline:3px solid #27b8d0;outline-offset:3px;border-radius:8px}
+h1,h2,h3{font-weight:800}
+/* Cabeçalho */
+header{height:84px}.logo img{width:auto;height:50px;max-height:none;mix-blend-mode:multiply}
+nav{gap:26px}nav a{font-size:12.5px;font-weight:600;position:relative}
+nav a:not(.navbtn):after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--grad);transform:scaleX(0);transition:transform .25s}
+nav a:not(.navbtn):hover:after,nav a.active:after{transform:scaleX(1)}nav a.active{color:var(--blue)}
+nav .navbtn,.btn{box-shadow:0 10px 24px #2865d838;transition:transform .25s,box-shadow .25s}nav .navbtn:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px #2865d855}
+/* Home: hero com mascotes */
+.hero-visual{height:500px}.hero-visual img{mix-blend-mode:multiply;filter:none;max-height:470px;max-width:100%;animation:bob 6s ease-in-out infinite}
+.halo{width:470px;height:470px}
+.hero-copy p,.lead{font-size:16px;color:var(--muted)}.hero-copy label,label{font-size:11px}
+.front{position:relative;overflow:hidden;box-shadow:0 22px 50px #12366f24}.front:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-80px;bottom:-110px;border:1px solid #ffffff40;box-shadow:0 0 0 34px #ffffff10,0 0 0 68px #ffffff08}
+.front .symbol{width:58px;height:58px;margin-top:30px;display:grid;place-items:center;border-radius:18px;background:#ffffff26;border:1px solid #ffffff44;backdrop-filter:blur(8px)}
+.front .symbol svg,.card-icon svg,.glyph svg{width:28px;height:28px}.front p{font-size:14.5px}
+.values small{font:800 30px Manrope;color:#9ed8c4;letter-spacing:-1px}.values p,.mascot-panel p,.cta p{font-size:13.5px;color:var(--muted)}
+.values article{background:linear-gradient(160deg,#fff,#f6faff)}
+.mascot-panel{position:relative;overflow:hidden}.duo{height:340px;gap:0;align-items:flex-end}.duo img{height:100%;max-width:50%;filter:drop-shadow(0 18px 22px #12366f33);transition:transform .4s}.duo img:hover{transform:translateY(-8px) scale(1.03)}.duo img:first-child{margin-right:-28px}
+/* Páginas de área: hero + mascote */
+.area-hero{min-height:560px}.area-hero .wrap{z-index:2}.area-hero.with-mascot .wrap>*{max-width:620px}.area-hero.with-mascot h1{font-size:clamp(40px,5vw,66px)}
+.area-mascot{position:absolute;z-index:1;right:max(24px,calc((100vw - 1160px)/2 + 20px));bottom:0;height:92%;max-height:520px;width:auto;filter:drop-shadow(0 25px 35px #00000040);animation:bob 7s ease-in-out infinite}
+.area-hero p{font-size:16.5px}.area-nav a{font-size:11.5px}
+/* Cartões */
+.area-card{min-height:250px}.area-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s}.area-card:hover:before{transform:scaleX(1)}
+.area-card .card-icon{width:58px;height:58px;border-radius:18px;background:var(--grad);color:#fff;box-shadow:0 12px 24px #2865d83a;margin:22px 0 18px}
+.digital-page .area-card .card-icon{background:linear-gradient(135deg,#075b83,#087f9d 55%,#20a77b);color:#fff;box-shadow:0 12px 24px #087f9d3a}
+.area-card h3{font-size:23px}.area-card p{font-size:14.5px;color:var(--muted)}.area-card .num{font-size:11px}
+.area-heading p{font-size:16px;color:var(--muted)}
+/* Processo: linha do tempo */
+.area-steps{position:relative;margin-top:44px;gap:22px}
+.area-steps:before{content:"";position:absolute;top:0;left:12%;right:12%;border-top:3px dotted #8fb2e6}
+.area-step{counter-increment:step;position:relative;padding:44px 26px 28px;border-radius:22px;box-shadow:0 18px 40px #12366f10;transition:transform .35s,box-shadow .35s}
+.area-steps{counter-reset:step}.area-step:hover{transform:translateY(-6px);box-shadow:0 26px 50px #12366f1c}
+.area-step:before{content:counter(step);position:absolute;top:-24px;left:26px;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#fff;font:800 20px Manrope;box-shadow:0 0 0 7px #eef5ff,0 10px 22px #2865d845}
+.area-step b{font-size:12px;letter-spacing:1.5px}.area-step h3{font-size:21px}.area-step p{font-size:14px;color:var(--muted)}
+.digital-page .area-steps:before{border-color:#7fd0d8}.digital-page .area-step:before{background:linear-gradient(135deg,#075b83,#087f9d 55%,#20a77b);box-shadow:0 0 0 7px #eef9fb,0 10px 22px #087f9d45}.digital-page .area-step b{color:#087d8e}
+/* Explorar */
+.explore-card .glyph{width:56px;height:56px;display:grid;place-items:center;border-radius:17px;background:var(--grad);color:#fff;margin:18px 0 12px;box-shadow:0 12px 24px #2865d838}.explore-card p{font-size:14px;color:var(--muted)}
+/* WhatsApp flutuante */
+.wa-float svg{width:28px;height:28px}.wa-float{animation:pulse 3.2s ease-out 2s 3}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #1fae6866,0 12px 32px #12366f38}70%,100%{box-shadow:0 0 0 22px #1fae6800,0 12px 32px #12366f38}}
+@media(max-width:850px){nav a{font-size:11px}.area-mascot{height:70%;opacity:.9}}
+@media(max-width:760px){.area-hero{min-height:0}.area-hero.with-mascot .wrap>*{max-width:100%}.area-mascot{height:210px;right:-18px;opacity:.28}.area-steps:before{display:none}.area-step{margin-top:26px}.hero-visual{height:340px}.hero-visual img{max-height:320px}.duo{height:230px}.logo img{height:42px}}
+@media(prefers-reduced-motion:reduce){.hero-visual img,.area-mascot,.wa-float{animation:none}}
