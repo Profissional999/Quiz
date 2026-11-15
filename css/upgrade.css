@@ -45,3 +45,156 @@ nav .navbtn,.btn{box-shadow:0 10px 24px #2865d838;transition:transform .25s,box-
 @media(max-width:850px){nav a{font-size:11px}.area-mascot{height:70%;opacity:.9}}
 @media(max-width:760px){.area-hero{min-height:0}.area-hero.with-mascot .wrap>*{max-width:100%}.area-mascot{height:210px;right:-18px;opacity:.28}.area-steps:before{display:none}.area-step{margin-top:26px}.hero-visual{height:340px}.hero-visual img{max-height:320px}.duo{height:230px}.logo img{height:42px}}
 @media(prefers-reduced-motion:reduce){.hero-visual img,.area-mascot,.wa-float{animation:none}}
+
+
+/* GRUPO SAFE 2.3 — gradientes imersivos, com a paleta institucional */
+:root{
+  --safe-blue:#12366f;
+  --safe-cobalt:#2865d8;
+  --safe-green:#168b70;
+  --safe-mist:#eef3f4;
+  --safe-slate:#667581;
+}
+.hero .halo{
+  background:radial-gradient(circle at 42% 38%,#d9f0e8 0%,#dfeafa 43%,#e8ecef 65%,transparent 74%);
+}
+.front.safety{
+  background:linear-gradient(128deg,#163b76 0%,#2865b8 58%,#4b8c9a 100%);
+}
+.front.digital{
+  background:linear-gradient(128deg,#12366f 0%,#176f78 58%,#168b70 100%);
+}
+.band{
+  background:
+    radial-gradient(ellipse at 82% 12%,#ffffff1c,transparent 35%),
+    linear-gradient(118deg,#102d59 0%,#245b91 55%,#397b70 100%);
+}
+.values article{
+  background:linear-gradient(145deg,#fff 0%,#f3f7f7 56%,#eef3f8 100%);
+  border:1px solid #e2e9ed;
+}
+.mascot-panel{
+  background:linear-gradient(118deg,#f5f8fa 0%,#edf4f5 55%,#e9f0f7 100%);
+  border:1px solid #e1e9ed;
+}
+.proof{display:none!important}
+
+/* Explorar: menos linguagem de campanha pronta, mais clareza e personalidade */
+.explore-hero{
+  background:
+    radial-gradient(ellipse at 83% 22%,#c8e6dc88 0%,transparent 31%),
+    radial-gradient(ellipse at 10% 85%,#d9e3eeaa 0%,transparent 34%),
+    linear-gradient(135deg,#f8fafb 0%,#edf3f4 54%,#e8f0f6 100%);
+}
+.explore-kicker{
+  background:#ffffffa8;
+  border-color:#d3e0df;
+  color:#315f69;
+  letter-spacing:1.15px;
+}
+.explore-card{
+  background:linear-gradient(145deg,#ffffff 0%,#f4f7f7 68%,#eef3f7 100%);
+  border-color:#e0e8e9;
+}
+.explore-card:before{
+  background:radial-gradient(circle,#cce5dcaa,transparent 70%);
+}
+.explore-card .number,.explore-card .glyph,.explore-card .go{color:#246f78}
+.explore-card .orb{border-color:#b8d2cd;box-shadow:inset 0 0 25px #dcebe7}
+.explore-card .orb:after{border-color:#9dbdb6}
+.explore-bottom{
+  background:
+    radial-gradient(ellipse at 85% 10%,#ffffff20,transparent 35%),
+    linear-gradient(118deg,#102d59 0%,#245b91 55%,#397b70 100%);
+}
+
+/* SAFE Digital: gradiente próprio, mas pertencente à identidade Grupo SAFE */
+.digital-page .area-hero{
+  background:
+    radial-gradient(ellipse at 83% 25%,#75c8a544,transparent 30%),
+    radial-gradient(ellipse at 12% 90%,#9baebd26,transparent 34%),
+    linear-gradient(125deg,#0b2345 0%,#164e75 54%,#176f68 100%);
+}
+.digital-page .area-hero:before,.digital-page .area-hero:after{
+  border-color:#d7eee32b;
+}
+.digital-page .area-orbit{
+  border-color:#d7eee34a;
+  box-shadow:0 0 0 35px #d7eee30c,0 0 0 70px #d7eee308;
+}
+.digital-page .area-kicker{color:#c7e8dc}
+.digital-page .area-kicker:before{background:#8bc6ad}
+.digital-page .area-hero h1 em{color:#a9d8c5}
+.digital-page .area-card:before{
+  background:linear-gradient(90deg,#2865d8,#168b70,#aebbc4);
+}
+.digital-page .area-card .card-icon{
+  background:linear-gradient(135deg,#164f79,#287f7b 72%,#168b70);
+  box-shadow:0 12px 24px #176f7830;
+}
+.digital-page .area-steps:before{border-color:#9bbdb6}
+.digital-page .area-step b{color:#287c78}
+.digital-page .area-cta{
+  background:
+    radial-gradient(ellipse at 88% 15%,#ffffff20,transparent 34%),
+    linear-gradient(118deg,#102d59 0%,#245b83 58%,#347b6c 100%);
+}
+
+/* Histórias que Transformam — identidade editorial regional */
+.stories-hero{
+  min-height:490px;position:relative;isolation:isolate;overflow:hidden;
+  display:flex;align-items:center;color:#fff;
+  background:
+    radial-gradient(ellipse at 78% 26%,#78b89a55,transparent 29%),
+    radial-gradient(ellipse at 8% 100%,#91a7b927,transparent 34%),
+    linear-gradient(120deg,#102b50 0%,#1d5271 55%,#397b70 100%);
+}
+.stories-hero:before,.stories-hero:after{
+  content:"";position:absolute;z-index:-1;border:1px solid #ffffff28;border-radius:50%;
+  width:490px;height:490px;right:7%;top:-210px;box-shadow:0 0 0 35px #ffffff09,0 0 0 70px #ffffff06;
+}
+.stories-hero:after{width:330px;height:330px;right:13%;top:-130px}
+.stories-hero-inner{position:relative;z-index:2;padding-top:90px;padding-bottom:95px}
+.stories-kicker{font-size:10px;font-weight:800;letter-spacing:2.5px;color:#c8e7d9}
+.stories-hero h1{color:#fff;font-size:clamp(46px,7vw,82px);max-width:850px;margin:24px 0}
+.stories-hero h1 em{color:#b5ddca}
+.stories-hero p{max-width:640px;color:#e0edf0;line-height:1.85;font-size:16px;margin-bottom:30px}
+.stories-hero .btn{background:#fff;color:#153f65}
+.stories-mark{position:absolute;right:13%;bottom:-95px;font:800 360px/1 Manrope;color:#ffffff0b;letter-spacing:-30px;pointer-events:none}
+.stories-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;padding-top:85px;padding-bottom:45px}
+.stories-intro h2,.stories-values h2,.stories-end h2{font-size:clamp(30px,4vw,48px);color:var(--navy);margin:15px 0}
+.stories-intro h2 em,.stories-values h2 em,.stories-end h2 em{color:#277b75}
+.stories-intro>p,.story-copy p,.stories-note p,.stories-pillars p,.stories-end p{color:var(--muted);line-height:1.85;font-size:14px}
+.stories-feature{padding-bottom:90px}
+.story-card{display:grid;grid-template-columns:.92fr 1.08fr;overflow:hidden;border:1px solid #dfe8e7;border-radius:28px;background:linear-gradient(135deg,#fff,#f2f6f5);box-shadow:0 22px 65px #173b5010}
+.story-art{min-height:390px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#fff;background:radial-gradient(circle at 50% 44%,#91bda0 0%,#477f78 32%,#204f6b 72%,#183a5a 100%)}
+.story-lines{position:absolute;inset:-20%;opacity:.3;background:repeating-linear-gradient(125deg,transparent 0 38px,#ffffff22 39px 40px)}
+.story-monogram{font:800 230px/1 Manrope;color:#ffffffd9;text-shadow:0 18px 40px #0c253c55}
+.story-stamp{position:absolute;top:28px;left:28px;padding:9px 13px;border:1px solid #ffffff55;border-radius:30px;font-size:9px;letter-spacing:2px;font-weight:800}
+.story-art-caption{position:absolute;bottom:28px;left:28px;font-size:9px;letter-spacing:2px;color:#e3f0e8}
+.story-copy{padding:clamp(28px,5vw,58px);align-self:center}
+.story-category{font-size:10px;font-weight:800;letter-spacing:2px;color:#267a72}
+.story-copy h2{font-size:clamp(38px,5vw,58px);color:var(--navy);margin:14px 0}
+.story-link{display:inline-flex;margin-top:12px;color:#23766e;font-weight:800;font-size:12px}
+.stories-note{display:flex;align-items:flex-start;gap:18px;max-width:650px;margin:30px auto 0;padding:22px 25px;border:1px solid #e0e8e7;border-radius:18px;background:linear-gradient(120deg,#f6f9f8,#eef3f5)}
+.stories-note>span{font:800 25px Manrope;color:#398477}
+.stories-note b{color:var(--navy);font:700 16px Manrope}
+.stories-note p{margin:6px 0 0}
+.stories-values{padding:80px 0 90px;background:linear-gradient(120deg,#f1f5f5,#edf3f7 60%,#eaf2ee);border-top:1px solid #e0e8e8;border-bottom:1px solid #e0e8e8}
+.stories-values h2{max-width:780px;margin-bottom:36px}
+.stories-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.stories-pillars article{padding:27px;border-radius:20px;background:#ffffffd9;border:1px solid #e0e8e8;box-shadow:0 15px 38px #173b5009}
+.stories-pillars b{color:#368477;font:800 24px Manrope}
+.stories-pillars h3{color:var(--navy);font-size:22px;margin:15px 0 8px}
+.stories-end{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-top:75px;padding-bottom:80px}
+.stories-end>div{max-width:720px}
+.stories-end .btn{white-space:nowrap}
+@media(max-width:720px){
+ .stories-hero{min-height:440px}.stories-hero-inner{padding-top:70px;padding-bottom:70px}
+ .stories-mark{font-size:220px;right:3%;bottom:-45px}
+ .stories-intro,.story-card{grid-template-columns:1fr;gap:22px}
+ .stories-intro{padding-top:60px}
+ .story-art{min-height:260px}.story-monogram{font-size:170px}
+ .stories-pillars{grid-template-columns:1fr}
+ .stories-end{align-items:flex-start;flex-direction:column;padding-top:55px}
+}
