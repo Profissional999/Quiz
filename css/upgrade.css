@@ -223,3 +223,49 @@ footer .foot{padding:32px 0;align-items:center}
 .foot-links a:hover{color:#2865d8;transform:translateY(-2px)}
 .foot-links .instagram-link{padding:10px 13px;border:1px solid #cfdbe5;border-radius:12px;background:linear-gradient(135deg,#ffffff,#f0f6f5);color:#246c78;font-weight:800}
 @media(max-width:680px){footer .foot{gap:24px}.foot-brand{min-width:0}.foot-links{gap:12px}.foot-logo img{width:126px}}
+
+/* GRUPO SAFE 2.5 — refinamentos responsivos e identidade cromática */
+:root{
+  --safe-institutional-blue:#12366f;
+  --safe-title-blue:#174a91;
+  --safe-action-blue:#2865d8;
+  --safe-tech-green:#168b70;
+  --safe-highlight-green:#26a884;
+}
+/* Paleta: azul como base institucional; verde somente em acentos/tecnologia */
+.hero{
+ background:radial-gradient(ellipse at 74% 20%,#2865d82a 0%,transparent 38%),
+           radial-gradient(ellipse at 12% 85%,#12366f18 0%,transparent 35%),
+           linear-gradient(135deg,#f7faff 0%,#edf4ff 54%,#e7f0fb 100%);
+}
+.hero .halo{background:radial-gradient(circle at 42% 38%,#dce9fb 0%,#cbdcf4 42%,#e7edf4 65%,transparent 75%);box-shadow:0 0 80px #2865d822}
+.hero h1 em,.section h2 em,.band h2 em,.mascot-panel h2 em,.cta h2 em{background:linear-gradient(110deg,#12366f 0%,#2865d8 65%,#5292db 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .hero-copy .btn,.navbtn{background:linear-gradient(120deg,#12366f,#2865d8)}
+/* Badge sobre os mascotes: removido em telas pequenas para evitar corte */
+@media(max-width:680px){.hero-visual aside{display:none!important}}
+/* Link do scroll: mantém o texto e a seta juntos */
+.hero-copy .quiet{white-space:nowrap;display:inline-block}
+/* Respiro para o botão de WhatsApp e seções ao rolar no mobile */
+@media(max-width:680px){
+ .section,.area-section,.content,.pagehero,.stories-intro,.stories-values{padding-bottom:calc(var(--section-bottom, 65px) + 24px)}
+ .area-section{scroll-margin-bottom:100px}
+ .wa-float{right:16px;bottom:16px;width:54px;height:54px;z-index:25}
+ body{padding-bottom:20px}
+}
+/* Cabeçalho em larguras intermediárias: reduz espaçamento antes de quebrar */
+@media(min-width:851px) and (max-width:1366px){
+ header{padding-left:clamp(18px,2.3vw,32px);padding-right:clamp(18px,2.3vw,32px)}
+ nav{gap:clamp(10px,1.15vw,18px)}
+ nav a{font-size:clamp(10px,0.85vw,12px);white-space:nowrap}
+ .logo img{height:44px}
+}
+/* Rodapé compacto, centrado e com Instagram reconhecível */
+footer .foot{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:30px 0 24px}
+.foot-brand{align-items:center;min-width:0;gap:7px}
+.foot-logo img{width:96px;max-height:44px}
+.foot-brand span{max-width:300px;font-size:10px}
+.foot-links{justify-content:center;gap:14px}
+.foot-links .instagram-link{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;background:linear-gradient(135deg,#fdf2f8,#f3e8ff);border:1px solid #e6d5f3;color:#7346a8}
+.foot-links .instagram-link svg{width:19px;height:19px;display:block}
+.copyright{text-align:center}
+@media(max-width:680px){footer .foot{padding:25px 0 20px;gap:13px}.foot-logo img{width:82px;max-height:38px}.foot-brand span{max-width:260px}.foot-links{gap:10px}.foot-links a{font-size:10px}}
